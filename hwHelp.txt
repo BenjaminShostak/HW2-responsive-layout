@@ -6,3 +6,38 @@ To hide elements simply use the .d-none class or one of the .d-{sm,md,lg,xl}-non
 To show an element only on a given interval of screen sizes you can combine one .d-*-none class with a .d-*-* class, for example .d-none .d-md-block .d-xl-none will hide the element for all screen sizes except on medium and large devices.
 
 Visible on all	.d-block
+
+
+-----------------------------------------
+Embeds
+Create responsive video or slideshow embeds based on the width of the parent by creating an intrinsic ratio that scales on any device.
+About
+Rules are directly applied to <iframe>, <embed>, <video>, and <object> elements; optionally use an explicit descendant class .embed-responsive-item when you want to match the styling for other attributes.
+Example
+Wrap any embed like an <iframe> in a parent element with .embed-responsive and an aspect ratio. The .embed-responsive-item isn’t strictly required, but we encourage it.
+        <div class="embed-responsive embed-responsive-16by9">
+  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" allowfullscreen></iframe>
+</div>
+
+--------------------------------------------------------------
+Overview
+These utility classes Float an element to the left or right, or disable floating, based on the current viewport size using the CSS float property. !important is included to avoid specificity issues. These use the same viewport breakpoints as our grid system. Please be aware float utilities have no effect on flex items.
+Float left on all viewport sizes
+Float right on all viewport sizes
+Don't float on all viewport sizes
+Copy
+<div class="float-left">Float left on all viewport sizes</div><br>
+<div class="float-right">Float right on all viewport sizes</div><br>
+<div class="float-none">Don't float on all viewport sizes</div>
+-----------......  ....... ------------        -----------
+
+Sticky top (BOTTOM ?)
+Position an element at the top of the viewport, from edge to edge, but only after you scroll past it. The .sticky-top utility uses CSS’s position: sticky, which isn’t fully supported in all browsers.
+
+IE11 and IE10 will render position: sticky as position: relative. As such, we wrap the styles in a @supports query, limiting the stickiness to only browsers that can render it properly.
+
+Copy
+<div class="sticky-top">...</div>
+
+
+
